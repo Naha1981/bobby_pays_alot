@@ -1,0 +1,177 @@
+.form-container {
+    background: rgba(40, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 16px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #ff6b35;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #a0aec0;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #e8470d;
+    box-shadow: 0 0 0 2px rgba(232, 71, 13, 0.2);
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.form-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.form-checkbox:checked {
+    background-color: #FFD700;
+    border-color: #FFD700;
+}
+
+.form-checkbox:checked::after {
+    content: "✓";
+    color: #000000;
+    position: absolute;
+    font-size: 14px;
+}
+
+.form-checkbox-label {
+    cursor: pointer;
+}
+
+.form-submit {
+    padding: 12px 24px;
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    background-color: #FFC000;
+}
+
+.form-submit:active {
+    transform: translateY(0);
+}
+
+.form-error {
+    color: #fc8181;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.form-success {
+    padding: 16px;
+    background: rgba(72, 187, 120, 0.1);
+    border: 1px solid rgba(72, 187, 120, 0.3);
+    border-radius: 8px;
+    color: #48bb78;
+    margin-top: 16px;
+}
+
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(232, 71, 13, 0.1);
+    border: 1px solid rgba(232, 71, 13, 0.3);
+    border-radius: 8px;
+    color: #ff6b35;
+    transition: all 0.3s ease;
+}
+
+.file-input-label:hover {
+    background: rgba(232, 71, 13, 0.2);
+}
+
+.file-name {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #a0aec0;
+}
