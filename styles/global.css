@@ -14,7 +14,7 @@ body {
 }
 
 .glass-effect {
-    background: rgba(255, 100, 100, 0.15);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
@@ -34,7 +34,7 @@ body {
 }
 
 .primary-gradient {
-    background: linear-gradient(135deg, #ff6b35 0%, #e8470d 100%);
+    background: linear-gradient(135deg, #e60000 0%, #990000 100%);
 }
 
 .cta-button {

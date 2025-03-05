@@ -44,6 +44,16 @@ function ChatContainer() {
           
           switch (intent) {
             case 'buy':
+              // First, add a message with showroom button
+              const showroomMessage = {
+                role: 'assistant',
+                content: "You might want to check our current inventory before proceeding. Our showroom has a wide selection of quality vehicles.",
+                timestamp: new Date().toISOString(),
+                specialComponent: <ShowroomButton />
+              };
+              setMessages(prevMessages => [...prevMessages, showroomMessage]);
+              
+              // Then add the regular form prompt
               formPrompt = chatAgent.getBuyFormPrompt();
               setActiveForm('buy');
               break;

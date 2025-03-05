@@ -6,7 +6,7 @@ const chatAgent = (function() {
   // Welcome message when chat is initialized
   function getWelcomeMessage() {
     return `
-      👋 Welcome to Mitmak Motors! I'm BobbyPaysALot, your virtual assistant.
+      👋 Welcome to Bobby-Pays-Alot! I'm your virtual assistant.
       
       I can help you with:
       • Finding your perfect vehicle
@@ -52,7 +52,7 @@ const chatAgent = (function() {
   // Get response for finance intent
   function getFinanceResponse() {
     return `
-      Financing your vehicle is easy at Mitmak Motors! We offer competitive rates and flexible terms to suit your budget.
+      Financing your vehicle is easy at Bobby-Pays-Alot! We offer competitive rates and flexible terms to suit your budget.
       
       Our financing options include:
       • Low interest rates starting from 7.5%
@@ -69,7 +69,7 @@ const chatAgent = (function() {
   // Get response for credit score intent
   function getCreditScoreResponse() {
     return `
-      Your credit score is an important factor in securing favorable financing terms. At Mitmak Motors, we can help you understand your credit profile and find options that work for you.
+      Your credit score is an important factor in securing favorable financing terms. At Bobby-Pays-Alot, we can help you understand your credit profile and find options that work for you.
       
       Benefits of checking your credit score:
       • Know where you stand before applying
@@ -101,7 +101,7 @@ const chatAgent = (function() {
   function getGeneralResponse(message) {
     // Sample responses for common questions
     if (message.includes('hours') || message.includes('open')) {
-      return "Mitmak Motors is open Monday to Friday from 8:00 AM to 6:00 PM, Saturday from 9:00 AM to 4:00 PM, and Sunday from 10:00 AM to 2:00 PM.";
+      return "Bobby-Pays-Alot is open Monday to Friday from 8:00 AM to 6:00 PM, Saturday from 9:00 AM to 4:00 PM, and Sunday from 10:00 AM to 2:00 PM.";
     }
     
     if (message.includes('location') || message.includes('address') || message.includes('where')) {

@@ -3,11 +3,11 @@ function Footer() {
     const currentYear = new Date().getFullYear();
     
     return (
-      <footer data-name="footer" className="bg-black bg-opacity-60 backdrop-blur-md py-6 border-t border-white border-opacity-10">
+      <footer data-name="footer" className="bg-black py-6 border-t border-white border-opacity-10">
         <div data-name="footer-container" className="container mx-auto px-4">
           <div data-name="footer-content" className="flex justify-center items-center">
             <p data-name="footer-credit" className="text-gray-400">
-              Build By: NahaInc
+              Powered by: NahaInc
             </p>
           </div>
           

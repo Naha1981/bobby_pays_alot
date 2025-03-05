@@ -1,5 +1,5 @@
 .form-container {
-    background: rgba(40, 0, 0, 0.7);
+    background: #111111; /* Dark background */
     border-radius: 12px;
     padding: 24px;
     margin: 16px 0;
@@ -23,7 +23,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 16px;
-    color: #ff6b35;
+    color: #e60000; /* Red title */
 }
 
 .form-group {
@@ -34,7 +34,7 @@
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
-    color: #a0aec0;
+    color: #ffffff; /* White label */
 }
 
 .form-input,
@@ -42,10 +42,10 @@
 .form-textarea {
     width: 100%;
     padding: 12px 16px;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff; /* White background */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    color: white;
+    color: #000000; /* Black text */
     font-size: 16px;
     transition: all 0.3s ease;
 }
@@ -54,8 +54,8 @@
 .form-select:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: #e8470d;
-    box-shadow: 0 0 0 2px rgba(232, 71, 13, 0.2);
+    border-color: #e60000; /* Red border */
+    box-shadow: 0 0 0 2px rgba(230, 0, 0, 0.2);
 }
 
 .form-textarea {
@@ -76,7 +76,7 @@
     height: 20px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
-    background: rgba(0, 0, 0, 0.2);
+    background: #ffffff; /* White background */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -85,25 +85,26 @@
 }
 
 .form-checkbox:checked {
-    background-color: #FFD700;
+    background-color: #FFD700; /* Yellow when checked */
     border-color: #FFD700;
 }
 
 .form-checkbox:checked::after {
     content: "✓";
-    color: #000000;
+    color: #000000; /* Black checkmark */
     position: absolute;
     font-size: 14px;
 }
 
 .form-checkbox-label {
     cursor: pointer;
+    color: #ffffff; /* White text */
 }
 
 .form-submit {
     padding: 12px 24px;
-    background-color: #FFD700;
-    color: #000000;
+    background-color: #e60000; /* Red submit button */
+    color: #ffffff; /* White text */
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -114,8 +115,8 @@
 
 .form-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-    background-color: #FFC000;
+    box-shadow: 0 4px 12px rgba(230, 0, 0, 0.3);
+    background-color: #cc0000; /* Darker red on hover */
 }
 
 .form-submit:active {
@@ -123,17 +124,17 @@
 }
 
 .form-error {
-    color: #fc8181;
+    color: #ff6666; /* Light red for errors */
     font-size: 14px;
     margin-top: 4px;
 }
 
 .form-success {
     padding: 16px;
-    background: rgba(72, 187, 120, 0.1);
-    border: 1px solid rgba(72, 187, 120, 0.3);
+    background: rgba(255, 215, 0, 0.1); /* Yellow tint background */
+    border: 1px solid rgba(255, 215, 0, 0.3);
     border-radius: 8px;
-    color: #48bb78;
+    color: #FFD700; /* Yellow text */
     margin-top: 16px;
 }
 
@@ -159,19 +160,19 @@
     align-items: center;
     gap: 8px;
     padding: 12px 16px;
-    background: rgba(232, 71, 13, 0.1);
-    border: 1px solid rgba(232, 71, 13, 0.3);
+    background: rgba(230, 0, 0, 0.1); /* Red tint background */
+    border: 1px solid rgba(230, 0, 0, 0.3);
     border-radius: 8px;
-    color: #ff6b35;
+    color: #e60000; /* Red text */
     transition: all 0.3s ease;
 }
 
 .file-input-label:hover {
-    background: rgba(232, 71, 13, 0.2);
+    background: rgba(230, 0, 0, 0.2); /* Darker red tint on hover */
 }
 
 .file-name {
     margin-top: 8px;
     font-size: 14px;
-    color: #a0aec0;
+    color: #ffffff; /* White text */
 }
