@@ -1,9 +1,9 @@
 function App() {
   try {
     return (
-      <div data-name="app" className="min-h-screen flex flex-col">
+      <div data-name="app" className="app-container">
         <Header />
-        <main data-name="main" className="flex-grow">
+        <main data-name="main" className="app-main">
           <ChatContainer />
         </main>
         <Footer />

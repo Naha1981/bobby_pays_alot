@@ -5,6 +5,7 @@ body {
     min-height: 100vh;
     background-color: #000000;
     color: #ffffff;
+    overflow-x: hidden;
 }
 
 .container {
@@ -90,6 +91,28 @@ body {
     background: rgba(255, 255, 255, 0.3);
 }
 
+/* App layout */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.app-header {
+    flex: 0 0 auto;
+}
+
+.app-main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.app-footer {
+    flex: 0 0 auto;
+}
+
 /* Responsive styles for chat widget */
 @media (max-width: 768px) {
     .container {
@@ -97,7 +120,48 @@ body {
     }
     
     .chat-container {
-        height: calc(100vh - 120px) !important;
+        height: calc(100vh - 160px) !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    
+    .form-container {
+        padding: 16px !important;
+    }
+    
+    .form-group {
+        margin-bottom: 12px !important;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding: 0 8px;
+    }
+    
+    h3 {
+        font-size: 18px !important;
+    }
+    
+    .form-label {
+        font-size: 14px !important;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 10px 12px !important;
+        font-size: 14px !important;
+    }
+    
+    .form-submit {
+        padding: 10px 16px !important;
+        font-size: 14px !important;
     }
 }
 

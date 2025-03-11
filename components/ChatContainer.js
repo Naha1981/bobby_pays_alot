@@ -3,6 +3,7 @@ function ChatContainer() {
     const [messages, setMessages] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
     const [activeForm, setActiveForm] = React.useState(null);
+    const [escalated, setEscalated] = React.useState(false);
     const messagesEndRef = React.useRef(null);
 
     // Initialize chat with welcome message
@@ -82,30 +83,57 @@ function ChatContainer() {
             messages.map(({ role, content }) => ({ role, content }))
           );
           
-          // Check if response contains special link tags
-          let processedResponse = assistantResponse;
-          let specialComponent = null;
-          
-          if (assistantResponse.includes('<FinanceLink>')) {
-            processedResponse = assistantResponse.replace('<FinanceLink>', '');
-            specialComponent = (
-              <FinanceLink text="Click below to explore our financing options:" />
-            );
-          } else if (assistantResponse.includes('<CreditScoreLink>')) {
-            processedResponse = assistantResponse.replace('<CreditScoreLink>', '');
-            specialComponent = (
-              <CreditScoreLink text="Click below to check your credit score for free:" />
-            );
+          // Handle different response types based on sentiment analysis
+          if (typeof assistantResponse === 'object' && assistantResponse.needsEscalation) {
+            // Handle escalation
+            const escalationMessage = {
+              role: 'assistant',
+              content: assistantResponse.content,
+              timestamp: new Date().toISOString(),
+              specialComponent: <EscalationMessage />
+            };
+            
+            setMessages(prevMessages => [...prevMessages, escalationMessage]);
+            setEscalated(true);
+            
+            // Add follow-up message after escalation
+            if (assistantResponse.followUp) {
+              setTimeout(() => {
+                const followUpMessage = {
+                  role: 'assistant',
+                  content: assistantResponse.followUp,
+                  timestamp: new Date().toISOString()
+                };
+                setMessages(prevMessages => [...prevMessages, followUpMessage]);
+              }, 2000);
+            }
+          } else {
+            // Regular response (string)
+            let processedResponse = assistantResponse;
+            let specialComponent = null;
+            
+            // Check if response contains special link tags
+            if (processedResponse.includes('<FinanceLink>')) {
+              processedResponse = processedResponse.replace('<FinanceLink>', '');
+              specialComponent = (
+                <FinanceLink text="Click below to explore our financing options:" />
+              );
+            } else if (processedResponse.includes('<CreditScoreLink>')) {
+              processedResponse = processedResponse.replace('<CreditScoreLink>', '');
+              specialComponent = (
+                <CreditScoreLink text="Click below to check your credit score for free:" />
+              );
+            }
+            
+            const assistantMessage = {
+              role: 'assistant',
+              content: processedResponse,
+              timestamp: new Date().toISOString(),
+              specialComponent: specialComponent
+            };
+            
+            setMessages(prevMessages => [...prevMessages, assistantMessage]);
           }
-          
-          const assistantMessage = {
-            role: 'assistant',
-            content: processedResponse,
-            timestamp: new Date().toISOString(),
-            specialComponent: specialComponent
-          };
-          
-          setMessages(prevMessages => [...prevMessages, assistantMessage]);
         }
       } catch (error) {
         console.error('Error processing message:', error);
@@ -162,7 +190,7 @@ function ChatContainer() {
     };
 
     return (
-      <div data-name="chat-container" className="container mx-auto px-4 py-6">
+      <div data-name="chat-container" className="container mx-auto px-4 py-6 h-full">
         <div data-name="chat-window" className="chat-container glass-effect">
           <div data-name="chat-messages" id="chat-messages" className="chat-messages scrollbar-thin">
             {messages.map((message, index) => (

@@ -14,6 +14,12 @@
     padding-bottom: 90px; /* Add padding to prevent content from being hidden behind input */
     background-color: #000000; /* Black background */
     color: #ffffff; /* White text */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 70px; /* Height of the input container */
 }
 
 .message {
@@ -100,6 +106,7 @@
     right: 0;
     width: 100%;
     z-index: 10;
+    height: 70px; /* Fixed height for input container */
 }
 
 .chat-form {
@@ -130,8 +137,8 @@
 }
 
 .send-button {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,6 +148,7 @@
     color: #ffffff; /* White icon */
     cursor: pointer;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
 .send-button:hover {
@@ -186,11 +194,12 @@
     
     .chat-messages {
         padding: 12px;
-        padding-bottom: 80px;
+        bottom: 65px; /* Adjusted for smaller input container on mobile */
     }
     
     .chat-input-container {
         padding: 12px;
+        height: 65px; /* Smaller height on mobile */
     }
     
     .chat-input {
@@ -199,7 +208,7 @@
     }
     
     .send-button {
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
     }
 }
